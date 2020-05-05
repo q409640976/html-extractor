@@ -1,5 +1,9 @@
 # Hippo HTML Extractor
-
+默认保存为index.html
+最后一个参数为 输出路径
+```
+python extract.py  https://my.blog.com/58.html ./tmp
+```
 The Hippo HTML Extractor script extracts HTML of a given site for use in Hippo CMS. Saving 
 the HTML with your browser doesn't extract any fonts, images referenced in the CSS files. 
 This script saves all referenced resources in HTML and CSS.
