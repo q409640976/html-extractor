@@ -33,8 +33,8 @@ logger = logging.getLogger(__name__)
 # however, lxml will escape the <@hst.webfile tag, so put placeholders that will be searched & replaced later
 # has to be in a separate method, otherwise path to css files will be incorrect for extraction of css web resources
 def add_webfiles_tags_to_resource_path(resource_path):
-	if not args.ftl:
-		resource_path = WEBFILES_START_TAG_SEARCHREPLACE + resource_path + WEBFILES_END_TAG_SEARCHREPLACE
+	#if not args.ftl:
+		#resource_path = WEBFILES_START_TAG_SEARCHREPLACE + resource_path + WEBFILES_END_TAG_SEARCHREPLACE
 	return resource_path
 
 
@@ -295,12 +295,12 @@ def main(url, save_folder):
 
 			# save ftl/html
 			html_file_contents = html.tostring(root)
-			if not args.ftl:
-				file_name = "%s/%s" % (save_folder, TEMPLATE_FILE_NAME_FTL)
-				# add webfiles import tag for importing tag libraries
-				html_file_contents = FTL_IMPORT_TAG + html_file_contents
-			else:
-				file_name = "%s/%s" % (save_folder, TEMPLATE_FILE_NAME_HTML)
+			#if not args.ftl:
+			#	file_name = "%s/%s" % (save_folder, TEMPLATE_FILE_NAME_FTL)
+			#	# add webfiles import tag for importing tag libraries
+			#	html_file_contents = FTL_IMPORT_TAG + html_file_contents
+			#else:
+			file_name = "%s/%s" % (save_folder, TEMPLATE_FILE_NAME_HTML)
 
 			# replace placeholders for webfiles tags
 			html_file_contents = html_file_contents.replace(WEBFILES_START_TAG_SEARCHREPLACE, WEBFILES_START_TAG)
